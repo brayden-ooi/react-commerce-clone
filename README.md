@@ -1,5 +1,7 @@
 This project is developed together along (not git-cloned!) the course with the instructor (where the original project's repo found [here](https://github.com/ZhangMYihua/crwn-clothing)) from the [React Developer in 2020](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/) by [Andrei Neagoie](https://www.udemy.com/user/andrei-neagoie/) and [Yihua Zhang](https://www.udemy.com/user/yihua-zhang-5/).
 
+The deployed app can be found [here](https://react-clone-project-crwn.herokuapp.com/).
+
 ## Available Scripts
 
 In the project directory, you can run:
