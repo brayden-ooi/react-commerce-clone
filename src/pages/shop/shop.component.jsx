@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -8,22 +8,23 @@ import CollectionsOverviewContainer from "../../components/collections-overview/
 import CollectionPageContainer from "../collection/collection.container";
 
 
-class ShopPage extends React.Component {
-  componentDidMount() {
-    const { fetchCollectionsStart } = this.props;
+const ShopPage = ({ fetchCollectionsStart, match }) => {
+
+  useEffect(() => {
     fetchCollectionsStart();
-  }
+  }, [fetchCollectionsStart]); // pass in fetchCollectionsStart to only call useEffect again if fetchCollectionsStart changes
 
-  render() {
-    const { match } = this.props;
+  // componentDidMount() {
+  //   const { fetchCollectionsStart } = this.props;
+  //   fetchCollectionsStart();
+  // }
 
-    return (
-      <div className="shop-page">
-        <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
-        <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
-      </div>
-    )
-  };
+  return (
+    <div className="shop-page">
+      <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
+      <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
+    </div>
+  );
 }
 
 const mapDispatchToProps = dispatch => ({
